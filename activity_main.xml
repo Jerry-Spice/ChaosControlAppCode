@@ -51,6 +51,63 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
+        <Button
+            android:id="@+id/coolReactorBtn"
+            android:layout_width="49dp"
+            android:layout_height="47dp"
+            android:background="#FF0000"
+            android:ellipsize="none"
+            app:layout_constraintBottom_toBottomOf="@+id/controls"
+            app:layout_constraintEnd_toEndOf="@+id/controls"
+            app:layout_constraintHorizontal_bias="0.132"
+            app:layout_constraintStart_toStartOf="@+id/controls"
+            app:layout_constraintTop_toTopOf="@+id/controls"
+            app:layout_constraintVertical_bias="0.146" />
+
+        <Button
+            android:id="@+id/fixLightsBtn"
+            android:layout_width="49dp"
+            android:layout_height="47dp"
+            android:background="#5262EC"
+            android:ellipsize="none"
+            app:layout_constraintBottom_toBottomOf="@+id/controls"
+            app:layout_constraintEnd_toEndOf="@+id/controls"
+            app:layout_constraintHorizontal_bias="0.129"
+            app:layout_constraintStart_toStartOf="@+id/controls"
+            app:layout_constraintTop_toTopOf="@+id/controls"
+            app:layout_constraintVertical_bias="0.415" />
+
+        <Switch
+            android:id="@+id/stabalizeCoreSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#7C7979"
+            android:checked="false"
+            android:switchMinWidth="100dp"
+            app:layout_constraintBottom_toBottomOf="@+id/controls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.107"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.653" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            style="@android:style/Widget.Material.SeekBar.Discrete"
+            android:layout_width="195dp"
+            android:layout_height="61dp"
+            android:background="#FFEB3B"
+            android:max="5"
+            android:progress="0"
+            android:scaleX="2"
+            android:scaleY="2"
+            android:thumb="@android:drawable/presence_online"
+            app:layout_constraintBottom_toBottomOf="@+id/controls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.916" />
+
         <TextView
             android:id="@+id/CoolReactorText"
             android:layout_width="wrap_content"
@@ -123,61 +180,6 @@
             app:layout_constraintStart_toStartOf="@+id/controls"
             app:layout_constraintTop_toTopOf="@+id/controls"
             app:layout_constraintVertical_bias="0.825" />
-
-        <Button
-            android:id="@+id/coolReactorBtn"
-            android:layout_width="49dp"
-            android:layout_height="47dp"
-            android:background="#FF0000"
-            android:ellipsize="none"
-            app:layout_constraintBottom_toBottomOf="@+id/controls"
-            app:layout_constraintEnd_toEndOf="@+id/controls"
-            app:layout_constraintHorizontal_bias="0.132"
-            app:layout_constraintStart_toStartOf="@+id/controls"
-            app:layout_constraintTop_toTopOf="@+id/controls"
-            app:layout_constraintVertical_bias="0.146" />
-
-        <Button
-            android:id="@+id/fixLightsBtn"
-            android:layout_width="49dp"
-            android:layout_height="47dp"
-            android:background="#5262EC"
-            android:ellipsize="none"
-            app:layout_constraintBottom_toBottomOf="@+id/controls"
-            app:layout_constraintEnd_toEndOf="@+id/controls"
-            app:layout_constraintHorizontal_bias="0.129"
-            app:layout_constraintStart_toStartOf="@+id/controls"
-            app:layout_constraintTop_toTopOf="@+id/controls"
-            app:layout_constraintVertical_bias="0.415" />
-
-        <Switch
-            android:id="@+id/stabalizeCoreSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-            android:switchMinWidth="100dp"
-            app:layout_constraintBottom_toBottomOf="@+id/controls"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.107"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.653" />
-
-        <SeekBar
-            android:id="@+id/seekBar2"
-            style="@android:style/Widget.DeviceDefault.Light.SeekBar"
-            android:layout_width="195dp"
-            android:layout_height="61dp"
-            android:max="5"
-            android:progress="0"
-            android:scaleX="2"
-            android:scaleY="2"
-            android:thumb="@android:drawable/presence_online"
-            app:layout_constraintBottom_toBottomOf="@+id/controls"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.916" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
