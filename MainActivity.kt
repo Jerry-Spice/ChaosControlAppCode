@@ -1,5 +1,6 @@
-package com.example.myapplication
+package com.example.chaoscontrol
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -16,12 +17,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Setting Up all the text variables
-        val order1 = findViewById<TextView>(R.id.order1)
-        val order2 = findViewById<TextView>(R.id.order2)
-        val order3 = findViewById<TextView>(R.id.order3)
-        val order4 = findViewById<TextView>(R.id.order4)
-        val order5 = findViewById<TextView>(R.id.order5)
-        val points = findViewById<TextView>(R.id.points)
+        var order1 = findViewById<TextView>(R.id.order1)
+        var order2 = findViewById<TextView>(R.id.order2)
+        var order3 = findViewById<TextView>(R.id.order3)
+        var order4 = findViewById<TextView>(R.id.order4)
+        var order5 = findViewById<TextView>(R.id.order5)
+        var points = findViewById<TextView>(R.id.points)
 
         val electrons = findViewById<TextView>(R.id.currentElectron)
 
@@ -79,15 +80,15 @@ class MainActivity : AppCompatActivity() {
 
         //end game pop-up functions
         fun showPopup() {
-            endGamePopUp.visibility =  android.view.View.VISIBLE
-            endgameButton.visibility = android.view.View.VISIBLE
-            endgameText.visibility = android.view.View.VISIBLE
+            endGamePopUp.visibility =  View.VISIBLE
+            endgameButton.visibility = View.VISIBLE
+            endgameText.visibility = View.VISIBLE
             playing = false
         }
         fun destroyPopup() {
-            endGamePopUp.visibility =  android.view.View.INVISIBLE
-            endgameButton.visibility = android.view.View.INVISIBLE
-            endgameText.visibility = android.view.View.INVISIBLE
+            endGamePopUp.visibility =  View.INVISIBLE
+            endgameButton.visibility = View.INVISIBLE
+            endgameText.visibility = View.INVISIBLE
         }
         fun resetData() {
             lives = 0
@@ -140,6 +141,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        var colors = arrayOf("#FF0000","#5262EC","#7C7979","#FFEB3B")
 
         fun addAnOrder(slot: Int) {
             var orderNumber = Random.nextInt(4)
@@ -147,56 +149,176 @@ class MainActivity : AppCompatActivity() {
             if (slot == 0) {
                 if (orderNumber == 0) {
                     order1Text = "Cool Reactor"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FF0000"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 1) {
                     order1Text = "Fix Lights"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#5262EC"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 2) {
                     order1Text = "Stabalize Core"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#7C7979"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 3) {
                     order1Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FFEB3B"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 }
             }
             if (slot == 1) {
                 if (orderNumber == 0) {
-                    order2Text = "Cool Reactor"
+                    order1Text = "Cool Reactor"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FF0000"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 1) {
-                    order2Text = "Fix Lights"
+                    order1Text = "Fix Lights"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#5262EC"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 2) {
-                    order2Text = "Stabalize Core"
+                    order1Text = "Stabalize Core"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#7C7979"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 3) {
-                    order2Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    order1Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FFEB3B"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 }
             }
             if (slot == 2) {
                 if (orderNumber == 0) {
-                    order3Text = "Cool Reactor"
+                    order1Text = "Cool Reactor"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FF0000"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 1) {
-                    order3Text = "Fix Lights"
+                    order1Text = "Fix Lights"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#5262EC"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 2) {
-                    order3Text = "Stabalize Core"
+                    order1Text = "Stabalize Core"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#7C7979"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 3) {
-                    order3Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    order1Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FFEB3B"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 }
             }
             if (slot == 3) {
                 if (orderNumber == 0) {
-                    order4Text = "Cool Reactor"
+                    order1Text = "Cool Reactor"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FF0000"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 1) {
-                    order4Text = "Fix Lights"
+                    order1Text = "Fix Lights"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#5262EC"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 2) {
-                    order4Text = "Stabalize Core"
+                    order1Text = "Stabalize Core"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#7C7979"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 3) {
-                    order4Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    order1Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FFEB3B"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 }
             }
             if (slot == 4) {
                 if (orderNumber == 0) {
-                    order5Text = "Cool Reactor"
+                    order1Text = "Cool Reactor"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FF0000"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 1) {
-                    order5Text = "Fix Lights"
+                    order1Text = "Fix Lights"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#5262EC"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 2) {
-                    order5Text = "Stabalize Core"
+                    order1Text = "Stabalize Core"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#7C7979"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 } else if (orderNumber == 3) {
-                    order5Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    order1Text = "Neutralize Electrons ("+targetElectrons.toString()+")"
+                    if (totalPoints <= 5000) {
+                        order1.setTextColor(Color.parseColor("#FFEB3B"))
+                    } else {
+                        var randomNumber = Random.nextInt(4);
+                        order1.setTextColor(Color.parseColor(colors[randomNumber]))
+                    }
                 }
             }
             order1.text = order1Text
@@ -206,8 +328,8 @@ class MainActivity : AppCompatActivity() {
             order5.text = order5Text
             if (addMore == 0 && slot + 1 < 5) {
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    (Random.nextInt(10) * 1000).toLong()
+                        { addAnOrder(findNextEmptySlot()) },
+                        (Random.nextInt(10) * 1000).toLong()
                 )
                 println("Adding another order")
             }
@@ -220,33 +342,33 @@ class MainActivity : AppCompatActivity() {
                 //timer progress bars
                 if (order1.text != "") {
                     progressBar1.progress -= 1
-                    progressBar1.visibility = android.view.View.VISIBLE
+                    progressBar1.visibility = View.VISIBLE
                 } else {
-                    progressBar1.visibility = android.view.View.INVISIBLE
+                    progressBar1.visibility = View.INVISIBLE
                 }
                 if (order2.text != "") {
                     progressBar2.progress -= 1
-                    progressBar2.visibility = android.view.View.VISIBLE
+                    progressBar2.visibility = View.VISIBLE
                 } else {
-                    progressBar2.visibility = android.view.View.INVISIBLE
+                    progressBar2.visibility = View.INVISIBLE
                 }
                 if (order3.text != "") {
                     progressBar3.progress -= 1
-                    progressBar3.visibility = android.view.View.VISIBLE
+                    progressBar3.visibility = View.VISIBLE
                 } else {
-                    progressBar3.visibility = android.view.View.INVISIBLE
+                    progressBar3.visibility = View.INVISIBLE
                 }
                 if (order4.text != "") {
                     progressBar4.progress -= 1
-                    progressBar4.visibility = android.view.View.VISIBLE
+                    progressBar4.visibility = View.VISIBLE
                 } else {
-                    progressBar4.visibility = android.view.View.INVISIBLE
+                    progressBar4.visibility = View.INVISIBLE
                 }
                 if (order5.text != "") {
                     progressBar5.progress -= 1
-                    progressBar5.visibility = android.view.View.VISIBLE
+                    progressBar5.visibility = View.VISIBLE
                 } else {
-                    progressBar5.visibility = android.view.View.INVISIBLE
+                    progressBar5.visibility = View.INVISIBLE
                 }
                 //resetting if they are empty
                 if (progressBar1.progress <= 0) {
@@ -306,8 +428,8 @@ class MainActivity : AppCompatActivity() {
                         order1Text = ""
                         order1.text = ""
                         Handler().postDelayed(
-                            { addAnOrder(findNextEmptySlot()) },
-                            700
+                                { addAnOrder(findNextEmptySlot()) },
+                                700
                         )
                         if (progressBar1.max - 100 > 100) {
                             progressBar1.max -= 100
@@ -337,8 +459,8 @@ class MainActivity : AppCompatActivity() {
                             addMoreLimit -= 1
                         }
                         Handler().postDelayed(
-                            { addAnOrder(findNextEmptySlot()) },
-                            700
+                                { addAnOrder(findNextEmptySlot()) },
+                                700
                         )
 
                         if (completed <= 0) {
@@ -359,8 +481,8 @@ class MainActivity : AppCompatActivity() {
                             addMoreLimit -= 1
                         }
                         Handler().postDelayed(
-                            { addAnOrder(findNextEmptySlot()) },
-                            700
+                                { addAnOrder(findNextEmptySlot()) },
+                                700
                         )
                         if (completed <= 0) {
                             timer -= 200;
@@ -380,8 +502,8 @@ class MainActivity : AppCompatActivity() {
                             addMoreLimit -= 1
                         }
                         Handler().postDelayed(
-                            { addAnOrder(findNextEmptySlot()) },
-                            700
+                                { addAnOrder(findNextEmptySlot()) },
+                                700
                         )
                         if (completed <= 0) {
                             timer -= 200;
@@ -401,8 +523,8 @@ class MainActivity : AppCompatActivity() {
                             addMoreLimit -= 1
                         }
                         Handler().postDelayed(
-                            { addAnOrder(findNextEmptySlot()) },
-                            700
+                                { addAnOrder(findNextEmptySlot()) },
+                                700
                         )
 
                         if (completed <= 0) {
@@ -414,7 +536,7 @@ class MainActivity : AppCompatActivity() {
 
                 //managing the life things and the life texts
                 livesTextElement.text = livesText
-                if (lives >= 5) {
+                if (lives >= 3) {
                     showPopup()
                 } else {
                     destroyPopup()
@@ -422,8 +544,8 @@ class MainActivity : AppCompatActivity() {
 
                 //looping function so put everything else before this code
                 Handler().postDelayed(
-                    { checkItems() },
-                    100
+                        { checkItems() },
+                        100
                 )
             }
         }
@@ -443,8 +565,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -464,8 +586,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -485,8 +607,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -506,8 +628,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -527,8 +649,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -551,8 +673,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -572,8 +694,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -593,8 +715,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -614,8 +736,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -635,8 +757,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -658,8 +780,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -679,8 +801,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -700,8 +822,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -721,8 +843,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -742,8 +864,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -751,8 +873,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             Handler().postDelayed(
-                { stabalizeCoreSwitch.isChecked = false  },
-                500
+                    { stabalizeCoreSwitch.isChecked = false  },
+                    500
             )
         })
         stabalizeCoreSwitch.setOnClickListener() {
@@ -769,8 +891,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -790,8 +912,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -811,8 +933,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -832,8 +954,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -853,8 +975,8 @@ class MainActivity : AppCompatActivity() {
                     addMoreLimit -= 1
                 }
                 Handler().postDelayed(
-                    { addAnOrder(findNextEmptySlot()) },
-                    700
+                        { addAnOrder(findNextEmptySlot()) },
+                        700
                 )
                 if (completed <= 0) {
                     timer -= 200;
@@ -863,8 +985,8 @@ class MainActivity : AppCompatActivity() {
             }
             //fixing the switch
             Handler().postDelayed(
-                { stabalizeCoreSwitch.isChecked = false  },
-                500
+                    { stabalizeCoreSwitch.isChecked = false  },
+                    500
             )
         }
 
@@ -874,9 +996,9 @@ class MainActivity : AppCompatActivity() {
 
         startGameButton.setOnClickListener() {
             //making the start screen vanish
-            startGameButton.visibility = android.view.View.INVISIBLE
-            startGameText.visibility = android.view.View.INVISIBLE
-            titleScreen.visibility = android.view.View.INVISIBLE
+            startGameButton.visibility = View.INVISIBLE
+            startGameText.visibility = View.INVISIBLE
+            titleScreen.visibility = View.INVISIBLE
             destroyPopup()
             //starting the game functions
             //initial order
